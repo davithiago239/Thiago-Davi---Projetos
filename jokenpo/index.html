@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpô | Thiago Davi</title>
+    <meta name="description" content="Jogo de Pedra, Papel e Tesoura feito por Thiago Davi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glow top-left"></div>
+    <div class="glow bottom-right"></div>
+
+    <header>
+        <div class="logo">Jokenpô<span>.</span></div>
+        <a href="../index.html" class="back-btn">← Voltar ao Portfólio</a>
+    </header>
+
+    <main>
+        <section class="scoreboard glass-card">
+            <div class="score-block">
+                <span class="score-label">Você</span>
+                <span class="score-number" id="player-score">0</span>
+            </div>
+            <div class="score-divider">VS</div>
+            <div class="score-block">
+                <span class="score-label">PC</span>
+                <span class="score-number" id="pc-score">0</span>
+            </div>
+        </section>
+
+        <section class="arena">
+            <div class="fighter">
+                <div class="fighter-label">Você</div>
+                <div class="choice-display" id="player-choice">❓</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="fighter">
+                <div class="fighter-label">Computador</div>
+                <div class="choice-display" id="pc-choice">❓</div>
+            </div>
+        </section>
+
+        <div class="result-container">
+            <p class="result-text" id="result-text">Faça sua escolha!</p>
+        </div>
+
+        <section class="choices">
+            <button class="choice-btn" id="btn-rock" onclick="play('rock')">
+                <span class="choice-icon">🪨</span>
+                <span class="choice-name">Pedra</span>
+            </button>
+            <button class="choice-btn" id="btn-paper" onclick="play('paper')">
+                <span class="choice-icon">📄</span>
+                <span class="choice-name">Papel</span>
+            </button>
+            <button class="choice-btn" id="btn-scissors" onclick="play('scissors')">
+                <span class="choice-icon">✂️</span>
+                <span class="choice-name">Tesoura</span>
+            </button>
+        </section>
+
+        <button class="reset-btn" onclick="resetGame()">🔄 Reiniciar Placar</button>
+    </main>
+
+    <footer>
+        <p>Projeto de <strong>Thiago Davi</strong> &mdash; <a href="https://www.linkedin.com/in/thiago-davi-27793626a/" target="_blank">LinkedIn</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Balão flutuante → Portfólio -->
+    <a href="../index.html" class="fab-back" id="fab-back" title="Voltar ao Portfólio">
+        <span class="fab-back-icon">🏠</span>
+        <span class="fab-back-label">Meu Portfólio</span>
+    </a>
+
+    <style>
+    .fab-back {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        background: linear-gradient(135deg, #9d4edd, #3c096c);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.85rem 1.4rem;
+        border-radius: 50px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 8px 25px rgba(157, 78, 221, 0.5);
+        z-index: 9999;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    box-shadow 0.4s ease;
+        animation: fabFloat 3s ease-in-out infinite;
+    }
+    .fab-back:hover {
+        transform: translateY(-6px) scale(1.05) !important;
+        box-shadow: 0 14px 35px rgba(157, 78, 221, 0.7);
+    }
+    .fab-back-icon { font-size: 1.3rem; line-height: 1; }
+    @keyframes fabFloat {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-7px); }
+    }
+    </style>
+</body>
+</html>

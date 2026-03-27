@@ -96,6 +96,45 @@
         </section>
     </main>
 
+    <!-- Balão flutuante → Jokenpô -->
+    <a href="jokenpo/index.html" class="fab" id="fab-jokenpo" title="Jogar Jokenpô">
+        <span class="fab-icon">🎮</span>
+        <span class="fab-label">Jogar Jokenpô</span>
+    </a>
+
+    <style>
+    .fab {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        background: linear-gradient(135deg, #9d4edd, #3c096c);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.85rem 1.4rem;
+        border-radius: 50px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 8px 25px rgba(157, 78, 221, 0.5);
+        z-index: 9999;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    box-shadow 0.4s ease;
+        animation: fabFloat 3s ease-in-out infinite;
+    }
+    .fab:hover {
+        transform: translateY(-6px) scale(1.05) !important;
+        box-shadow: 0 14px 35px rgba(157, 78, 221, 0.7);
+    }
+    .fab-icon { font-size: 1.3rem; line-height: 1; }
+    @keyframes fabFloat {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-7px); }
+    }
+    </style>
+
     <footer>
         <p>&copy; 2026 Thiago Davi. Todos os direitos reservados.</p>
     </footer>
